@@ -1,8 +1,28 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native';
 
-const HomeScreen = () => {
-  return <Text style={styles.text}>HomeScree!n</Text>;
+
+const HomeScreen = ( {navigation} ) => {
+// props.navigation // this is destructuring example
+  return (
+    <View>
+       <Text style={styles.text}>HomeScreen</Text>
+       <Button 
+       title='Component'
+       onPress={() => {navigation.navigate('Component')}}
+       />
+       <Button 
+       title='List'
+       onPress={() => {navigation.navigate('List')}}
+       />
+       {/* <TouchableOpacity
+       onPress={() => {console.log('c pressed')}}>
+        <Text>List</Text>
+        <Text>List</Text>
+       </TouchableOpacity> */}
+    </View>
+  )
+ 
 };
 
 const styles = StyleSheet.create({
