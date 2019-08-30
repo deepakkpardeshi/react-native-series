@@ -14,15 +14,16 @@ const TextScreen = () => {
             autoCorrect={false}
             onChangeText={(newValue) => setName(newValue)}
             ></TextInput>
-            <Text>Hi ${name}</Text>
+            <Text>${name}</Text>
+            { name.length < 6 ? <Text>Password must be longer that 5 characters</Text> : null}
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     Input: {
-        borderColor: 'black',
-        borderWidth: 1.0,
+        borderBottomColor: 'black',
+        borderBottomWidth: 1.0,
         padding: 10,
         margin: 10
     }
